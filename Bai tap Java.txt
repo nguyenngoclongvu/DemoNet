@@ -1,0 +1,438 @@
+Nguyễn Ngọc Long Vũ-1921050696-Tìm hiểu về JavaScript
+
+
+JS Web APIs
+Giới thiệu về API Web
+	API Web là gì?
+API là viết tắt của Giao diện lập trình ứng dụng P tôi .
+API Web là một giao diện lập trình ứng dụng cho Web.
+API trình duyệt có thể mở rộng chức năng của trình duyệt web.
+API máy chủ có thể mở rộng chức năng của máy chủ web.
+	API trình duyệt
+-Tất cả các trình duyệt đều có một bộ API Web tích hợp để hỗ trợ các hoạt động phức tạp và giúp truy cập dữ liệu.
+-Ví dụ: API vị trí địa lý có thể trả về tọa độ của vị trí trình duyệt.
+API của bên thứ ba
+API của bên thứ ba không được tích hợp vào trình duyệt của bạn.
+Để sử dụng các API này, bạn sẽ phải tải xuống mã từ Web.
+Ví dụ:
+YouTube API - Cho phép bạn hiển thị video trên một trang web.
+API Twitter - Cho phép bạn hiển thị các Tweet trên một trang web.
+Facebook API - Cho phép bạn hiển thị thông tin Facebook trên một trang web.
+
+
+
+
+
+2. API biểu mẫu web
+	Các phương thức DOM xác thực ràng buộc
+Property
+Description
+checkValidity()
+Returns true if an input element contains valid data.
+setCustomValidity()
+Sets the validationMessage property of an input element.
+
+Nếu một trường đầu vào chứa dữ liệu không hợp lệ, hãy hiển thị thông báo
+
+
+Thuộc tính DOM xác thực ràng buộc
+Property
+Description
+validity
+Contains boolean properties related to the validity of an input element.
+validationMessage
+Contains the message a browser will display when the validity is false.
+willValidate
+Indicates if an input element will be validated.
+
+
+Thuộc tính hiệu lực
+Thuộc tính hợp lệ của một phần tử đầu vào chứa một số thuộc tính liên quan đến tính hợp lệ của dữ liệu:
+Property
+Description
+customError
+Set to true, if a custom validity message is set.
+patternMismatch
+Set to true, if an element's value does not match its pattern attribute.
+rangeOverflow
+Set to true, if an element's value is greater than its max attribute.
+rangeUnderflow
+Set to true, if an element's value is less than its min attribute.
+stepMismatch
+Set to true, if an element's value is invalid per its step attribute.
+tooLong
+Set to true, if an element's value exceeds its maxLength attribute.
+typeMismatch
+Set to true, if an element's value is invalid per its type attribute.
+valueMissing
+Set to true, if an element (with a required attribute) has no value.
+valid
+Set to true, if an element's value is valid.
+
+3. API Lịch sử web
+
+API lịch sử web
+API lịch sử web cung cấp các phương thức dễ dàng để truy cập đối tượng windows.history.
+Đối tượng window.history chứa các URL (Trang web) mà người dùng đã truy cập.
+API Lịch sử web được hỗ trợ trong tất cả các trình duyệt:
+Phương thức History back()
+Phương thức back() tải URL trước đó trong danh sách windows.history.
+Nó giống như nhấp vào "mũi tên quay lại" trong trình duyệt của bạn.
+	Phương thức History go()
+Phương thức go() tải một URL cụ thể từ danh sách lịch sử:
+
+Thuộc tính đối tượng lịch sử
+Property
+Description
+length
+Returns the number of URLs in the history list
+
+Phương thức đối tượng lịch sử
+Method
+Description
+back()
+Loads the previous URL in the history list
+forward()
+Loads the next URL in the history list
+go()
+Loads a specific URL from the history list
+
+
+
+4. API Lưu trữ web
+
+	Web Storage API là một cú pháp đơn giản để lưu trữ và truy xuất dữ liệu trong trình duyệt. Nó rất dễ sử dụng:
+Ví dụ
+localStorage.setItem("name", "John Doe");
+localStorage.getItem("name");
+API lưu trữ web được hỗ trợ trong tất cả các trình duyệt:	
+Đối tượng lưu trữ cục bộ
+-Đối tượng localStorage cung cấp quyền truy cập vào bộ lưu trữ cục bộ cho một Trang web cụ thể. Nó cho phép bạn lưu trữ, đọc, thêm, sửa đổi và xóa các mục dữ liệu cho miền đó.
+-Dữ liệu được lưu trữ không có ngày hết hạn và sẽ không bị xóa khi đóng trình duyệt.
+-Dữ liệu sẽ có sẵn trong nhiều ngày, nhiều tuần và nhiều năm.
+Phương thức setItem()
+Phương thức localStorage.setItem() lưu trữ một mục dữ liệu trong bộ lưu trữ.
+Nó nhận một tên và một giá trị làm tham số:
+	Ví dụ
+localStorage.setItem("name", "John Doe");
+Phương thức getItem()
+Phương thức localStorage.getItem() truy xuất một mục dữ liệu từ bộ lưu trữ.
+Nó lấy một tên làm tham số:
+Ví dụ
+localStorage.getItem("name");
+Đối tượng lưu trữ phiên
+Đối tượng sessionStorage giống với đối tượng localStorage.
+Sự khác biệt là đối tượng sessionStorage lưu trữ dữ liệu cho một phiên.
+Dữ liệu bị xóa khi đóng trình duyệt.
+Ví dụ
+sessionStorage.getItem("name");
+Phương thức setItem()
+Phương thức sessionStorage.setItem() lưu trữ một mục dữ liệu trong bộ lưu trữ.
+Nó nhận một tên và một giá trị làm tham số:
+Ví dụ
+sessionStorage.setItem("name", "John Doe");
+Phương thức getItem()
+Phương thức sessionStorage.getItem() truy xuất một mục dữ liệu từ bộ lưu trữ.
+Nó lấy một tên làm tham số:
+Ví dụ
+sessionStorage.getItem("name");
+Các thuộc tính và phương thức của đối tượng lưu trữ
+Property/Method
+Description
+key(n)
+Returns the name of the nth key in the storage
+length
+Returns the number of data items stored in the Storage object
+getItem(keyname)
+Returns the value of the specified key name
+setItem(keyname, value)
+Adds a key to the storage, or updates a key value (if it already exists)
+removeItem(keyname)
+Removes that key from the storage
+clear()
+Empty all key out of the storage
+
+Các trang liên quan cho API lưu trữ web
+Property
+Description
+window.localStorage
+Allows to save key/value pairs in a web browser. Stores the data with no expiration date
+window.sessionStorage
+Allows to save key/value pairs in a web browser. Stores the data for one session
+
+
+
+5. API Worker WEb
+Web worker là một JavaScript chạy ẩn, không ảnh hưởng đến hiệu suất của trang.
+Worker WEb là gì ?
+Khi thực thi tập lệnh trong trang HTML, trang sẽ không phản hồi cho đến khi tập lệnh kết thúc.
+Công nhân web là một JavaScript chạy trong nền, độc lập với các tập lệnh khác mà không ảnh hưởng đến hiệu suất của trang. Bạn có thể tiếp tục làm bất cứ điều gì mình muốn: nhấp chuột, chọn thứ, v.v. trong khi nhân viên web chạy ẩn.
+
+Kiểm tra hỗ trợ nhân viên web
+Trước khi tạo web worker, hãy kiểm tra xem trình duyệt của người dùng có hỗ trợ hay không:
+if (typeof(Worker) !== "undefined") {
+  // Yes! Web worker support!
+  // Some code.....
+} else {
+  // Sorry! No Web Worker support..
+}
+
+
+Tạo một tệp công nhân web
+Bây giờ, hãy tạo nhân viên web của chúng tôi bằng JavaScript bên ngoài.
+Ở đây, chúng tôi tạo một tập lệnh có giá trị. Tập lệnh được lưu trữ trong tệp "demo_workers.js":
+let i = 0;
+
+
+function timedCount() {
+  i ++;
+  postMessage(i);
+  setTimeout("timedCount()",500);
+}
+
+
+timedCount();
+Phần quan trọng của đoạn mã trên là postMessage()phương thức - được sử dụng để đăng một thông báo trở lại trang HTML.
+Lưu ý: Thông thường web worker không được sử dụng cho các tập lệnh đơn giản như vậy mà cho các tác vụ sử dụng nhiều CPU hơn.
+
+
+Tạo đối tượng Web Worker
+Bây giờ chúng ta có tệp web worker, chúng ta cần gọi nó từ một trang HTML.
+Các dòng sau kiểm tra xem worker đã tồn tại chưa, nếu chưa - nó sẽ tạo một đối tượng web worker mới và chạy mã trong "demo_workers.js":
+if (typeof(w) == "undefined") {
+  w = new Worker("demo_workers.js");
+}
+Sau đó, chúng tôi có thể gửi và nhận tin nhắn từ nhân viên web.
+Thêm trình xử lý sự kiện "onmessage" vào web worker.
+onmessage
+Khi nhân viên web đăng một thông báo, mã trong trình xử lý sự kiện sẽ được thực thi. Dữ liệu từ nhân viên web được lưu trữ trong event.data.
+
+Chấm dứt một Web Worker
+Khi một đối tượng web worker được tạo, nó sẽ tiếp tục lắng nghe các thông báo (ngay cả sau khi tập lệnh bên ngoài kết thúc) cho đến khi nó bị chấm dứt.
+Để chấm dứt một nhân viên web và tài nguyên máy tính/trình duyệt miễn phí, hãy sử dụng terminate()phương pháp:
+w.terminate();
+
+Sử dụng lại Web Worker
+Nếu bạn đặt biến worker thành không xác định, sau khi nó bị chấm dứt, bạn có thể sử dụng lại mã:
+w = undefined;
+
+Mã ví dụ đầy đủ về công nhân web
+Chúng ta đã thấy mã Worker trong tệp .js. Dưới đây là mã cho trang HTML:
+Ví dụ
+<!DOCTYPE html>
+<html>
+<body>
+
+
+<p>Count numbers: <output id="result"></output></p>
+<button onclick="startWorker()">Start Worker</button>
+<button onclick="stopWorker()">Stop Worker</button>
+
+
+<script>
+let w;
+
+
+function startWorker() {
+  if (typeof(w) == "undefined") {
+	w = new Worker("demo_workers.js");
+  }
+  w.onmessage = function(event) {
+	document.getElementById("result").innerHTML = event.data;
+  };
+}
+
+
+function stopWorker() {
+  w.terminate();
+  w = undefined;
+}
+</script>
+
+
+</body>
+</html>
+Tự mình thử »
+
+Công nhân web và DOM
+Vì nhân viên web đang ở trong các tệp bên ngoài nên họ không có quyền truy cập vào các đối tượng JavaScript sau:
+đối tượng cửa sổ
+đối tượng tài liệu
+đối tượng cha mẹ
+
+
+6. API tìm nạp web
+
+
+Giao diện Fetch API cho phép trình duyệt web thực hiện các yêu cầu HTTP tới máy chủ web.
+😀 Không cần XMLHttpRequest nữa.
+Hỗ trợ trình duyệt
+Các số trong bảng chỉ định các phiên bản trình duyệt đầu tiên hỗ trợ đầy đủ Fetch API
+	Ví dụ về API tìm nạp
+Ví dụ dưới đây tìm nạp một tệp và hiển thị nội dung:
+Ví dụ
+fetch(file)
+.then(x => x.text())
+.then(y => myDisplay(y));
+
+
+7. API định vị địa lý web
+
+
+Xác định vị trí của người dùng
+HTML Geolocation API được sử dụng để lấy vị trí địa lý của người dùng.
+Vì điều này có thể ảnh hưởng đến quyền riêng tư nên vị trí này không khả dụng trừ khi người dùng chấp thuận.
+
+Ghi chú
+Định vị địa lý chính xác nhất cho các thiết bị có GPS, chẳng hạn như điện thoại thông minh.
+Hỗ trợ trình duyệt
+API vị trí địa lý được hỗ trợ trong tất cả các trình duyệt
+Ghi chú
+API vị trí địa lý sẽ chỉ hoạt động trên các ngữ cảnh an toàn như HTTPS.
+Nếu trang web của bạn được lưu trữ trên một nguồn gốc không an toàn (chẳng hạn như HTTP), các yêu cầu lấy vị trí của người dùng sẽ không còn hoạt động.
+Sử dụng API vị trí địa lý
+Phương thức này getCurrentPosition()được sử dụng để trả về vị trí của người dùng.
+Ví dụ dưới đây trả về vĩ độ và kinh độ của vị trí của người dùng:
+Ví dụ
+<script>
+const x = document.getElementById("demo");
+function getLocation() {
+  if (navigator.geolocation) {
+	navigator.geolocation.getCurrentPosition(showPosition);
+  } else {
+	x.innerHTML = "Geolocation is not supported by this browser.";
+  }
+}
+
+
+function showPosition(position) {
+  x.innerHTML = "Latitude: " + position.coords.latitude +
+  "<br>Longitude: " + position.coords.longitude;
+}
+</script>
+Ví dụ giải thích:
+Kiểm tra xem Định vị địa lý có được hỗ trợ không
+Nếu được hỗ trợ, hãy chạy phương thức getCurrentPosition(). Nếu không, hiển thị thông báo cho người dùng
+Nếu phương thức getCurrentPosition() thành công, nó sẽ trả về một đối tượng tọa độ cho hàm được chỉ định trong tham số (showPosition)
+Hàm showPosition() xuất Vĩ độ và Kinh độ
+Ví dụ trên là tập lệnh Định vị địa lý rất cơ bản, không xử lý lỗi.
+Xử lý lỗi và từ chối
+Tham số thứ hai của getCurrentPosition()phương thức được sử dụng để xử lý lỗi. Nó chỉ định một chức năng để chạy nếu nó không lấy được vị trí của người dùng:
+Ví dụ
+function showError(error) {
+  switch(error.code) {
+    case error.PERMISSION_DENIED:
+  	x.innerHTML = "User denied the request for Geolocation."
+      break;
+    case error.POSITION_UNAVAILABLE:
+  	x.innerHTML = "Location information is unavailable."
+      break;
+    case error.TIMEOUT:
+  	x.innerHTML = "The request to get user location timed out."
+      break;
+    case error.UNKNOWN_ERROR:
+      x.innerHTML = "An unknown error occurred."
+      break;
+  }
+}
+
+
+Hiển thị kết quả trong bản đồ
+Để hiển thị kết quả trong bản đồ, bạn cần truy cập vào dịch vụ bản đồ, như Google Maps.
+Trong ví dụ bên dưới, kinh độ và vĩ độ được trả về được sử dụng để hiển thị vị trí trong Google Map (sử dụng hình ảnh tĩnh):
+Ví dụ
+function showPosition(position) {
+  let latlon = position.coords.latitude + "," + position.coords.longitude;
+
+
+  let img_url = "https://maps.googleapis.com/maps/api/staticmap?center=
+  "+latlon+"&zoom=14&size=400x300&sensor=false&key=YOUR_KEY";
+
+
+  document.getElementById("mapholder").innerHTML = "<img src='"+img_url+"'>";
+}
+Thông tin cụ thể về vị trí
+Trang này đã trình bày cách hiển thị vị trí của người dùng trên bản đồ.
+Định vị địa lý cũng rất hữu ích cho thông tin về vị trí cụ thể, như:
+Cập nhật thông tin địa phương
+Hiển thị Điểm ưa thích gần người dùng
+Điều hướng từng chặng (GPS)
+
+
+Phương thức getCurrentPosition() - Trả về dữ liệu
+Phương getCurrentPosition()thức trả về một đối tượng khi thành công. Các thuộc tính vĩ độ, kinh độ và độ chính xác luôn được trả về. Các thuộc tính khác được trả lại nếu có:
+
+
+Property
+Returns
+coords.latitude
+The latitude as a decimal number (always returned)
+coords.longitude
+The longitude as a decimal number (always returned)
+coords.accuracy
+The accuracy of position (always returned)
+coords.altitude
+The altitude in meters above the mean sea level (returned if available)
+coords.altitudeAccuracy
+The altitude accuracy of position (returned if available)
+coords.heading
+The heading as degrees clockwise from North (returned if available)
+coords.speed
+The speed in meters per second (returned if available)
+timestamp
+The date/time of the response (returned if available)
+
+
+Đối tượng định vị địa lý - Các phương pháp thú vị khác
+Đối tượng Định vị địa lý cũng có các phương thức thú vị khác:
+watchPosition()- Trả về vị trí hiện tại của người dùng và tiếp tục trả lại vị trí đã cập nhật khi người dùng di chuyển (giống như GPS trên ô tô).
+clearWatch()- Dừng watchPosition()phương pháp.
+Ví dụ dưới đây cho thấy watchPosition()phương pháp. Bạn cần một thiết bị GPS chính xác để kiểm tra điều này (như điện thoại thông minh):
+Ví dụ
+<script>
+const x = document.getElementById("demo");
+function getLocation() {
+  if (navigator.geolocation) {
+	navigator.geolocation.watchPosition(showPosition);
+  } else {
+	x.innerHTML = "Geolocation is not supported by this browser.";
+  }
+}
+function showPosition(position) {
+  x.innerHTML = "Latitude: " + position.coords.latitude +
+  "<br>Longitude: " + position.coords.longitude;
+}
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
